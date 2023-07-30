@@ -13,7 +13,9 @@ type PingHandler struct {
 }
 
 func NewPingHandler(pingService IPingService) IPingHandler {
-	return &PingHandler{PingService: pingService}
+	return &PingHandler{
+		PingService: pingService,
+	}
 }
 
 // Ping godoc
