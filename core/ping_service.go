@@ -15,5 +15,5 @@ func NewPingService(httpClient IHTTPClient) IPingService {
 }
 
 func (p PingService) Ping() string {
-	return p.HTTPClient.Get()
+	return p.HTTPClient.GetMessage()
 }

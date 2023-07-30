@@ -3,14 +3,12 @@ package main
 import (
 	"context"
 	"ioc/core"
+	_ "ioc/docs"
 	"log"
 
 	"github.com/sirupsen/logrus"
-	"go.uber.org/fx/fxevent"
-
-	_ "ioc/docs"
-
 	"go.uber.org/fx"
+	"go.uber.org/fx/fxevent"
 )
 
 // @title Fiber Example API

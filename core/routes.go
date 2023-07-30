@@ -14,11 +14,16 @@ import (
 type Container struct {
 	fx.In
 
-	Logger      *logrus.Logger
+	Logger *logrus.Logger
+}
+
+type Handlers struct {
+	fx.In
+
 	PingHandler IPingHandler
 }
 
-func Routes(app *fiber.App, c Container) {
+func Routes(app *fiber.App, h Handlers) {
 	app.Add(http.MethodGet, "/swagger/*", swagger.HandlerDefault)
-	app.Add(http.MethodGet, "/ping", c.PingHandler.Ping)
+	app.Add(http.MethodGet, "/ping", h.PingHandler.Ping)
 }

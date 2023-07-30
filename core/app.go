@@ -10,13 +10,13 @@ type App struct {
 	*fiber.App
 }
 
-func NewApp(container Container) *App {
+func NewApp(container Container, handlers Handlers) *App {
 	app := fiber.New(fiber.Config{
 		DisableStartupMessage: true,
 		EnablePrintRoutes:     false,
 	})
 
-	prometheus := fiberprometheus.New("my-service-name")
+	prometheus := fiberprometheus.New("ioc")
 	prometheus.RegisterAt(app, "/metrics")
 	app.Use(prometheus.Middleware)
 
@@ -25,7 +25,7 @@ func NewApp(container Container) *App {
 		Output: container.Logger.Writer(),
 	}))
 
-	Routes(app, container)
+	Routes(app, handlers)
 
 	return &App{
 		App: app,
