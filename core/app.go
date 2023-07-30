@@ -20,7 +20,10 @@ func NewApp(container Container) *App {
 	prometheus.RegisterAt(app, "/metrics")
 	app.Use(prometheus.Middleware)
 
-	app.Use(logger.New())
+	app.Use(logger.New(logger.Config{
+		Format: "${pid} ${locals:requestid} ${status} - ${method} ${path}\n",
+		Output: container.Logger.Writer(),
+	}))
 
 	Routes(app, container)
 

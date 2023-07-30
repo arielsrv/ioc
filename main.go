@@ -5,6 +5,9 @@ import (
 	"ioc/core"
 	"log"
 
+	"github.com/sirupsen/logrus"
+	"go.uber.org/fx/fxevent"
+
 	_ "ioc/docs"
 
 	"go.uber.org/fx"
@@ -26,6 +29,12 @@ func main() {
 		fx.Provide(core.NewPingService),
 		fx.Provide(core.NewPingHandler),
 		fx.Provide(core.NewApp),
+		fx.Provide(logrus.New),
+		fx.WithLogger(func(log *logrus.Logger) fxevent.Logger {
+			return &fxevent.ConsoleLogger{
+				W: log.Writer(),
+			}
+		}),
 		fx.Invoke(func(app *core.App) {
 			err := app.Listen(":8080")
 			if err != nil {

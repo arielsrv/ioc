@@ -3,6 +3,8 @@ package core
 import (
 	"net/http"
 
+	"github.com/sirupsen/logrus"
+
 	"github.com/gofiber/swagger"
 
 	"github.com/gofiber/fiber/v2"
@@ -12,6 +14,7 @@ import (
 type Container struct {
 	fx.In
 
+	Logger      *logrus.Logger
 	PingHandler IPingHandler
 }
 
