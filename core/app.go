@@ -7,9 +7,7 @@ import (
 )
 
 type App struct {
-	container Container
-
-	fiber.App
+	*fiber.App
 }
 
 func NewApp(container Container) *App {
@@ -27,6 +25,6 @@ func NewApp(container Container) *App {
 	Routes(app, container)
 
 	return &App{
-		App: *app,
+		App: app,
 	}
 }

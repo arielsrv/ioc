@@ -2,17 +2,25 @@ package main
 
 import (
 	"context"
-	"go.uber.org/fx"
 	"ioc/core"
 	"log"
+
+	"go.uber.org/fx"
+	_ "ioc/docs"
 )
 
+// @title Fiber Example API
+// @version 1.0
+// @description This is a sample swagger for Fiber
+// @termsOfService http://swagger.io/terms/
+// @contact.name API Support
+// @contact.email fiber@swagger.io
+// @license.name Apache 2.0
+// @license.url http://www.apache.org/licenses/LICENSE-2.0.html
+// @host localhost:8080
+// @BasePath /
 func main() {
 	app := fx.New(
-		// fx.NopLogger,
-		fx.Provide(core.NewHTTPClient),
-		fx.Provide(core.NewPingService),
-		fx.Provide(core.NewPingHandler),
 		fx.Provide(core.NewApp),
 		fx.Invoke(func(app *core.App) {
 			err := app.Listen(":8080")

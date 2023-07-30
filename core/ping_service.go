@@ -1,19 +1,12 @@
 package core
 
-type IPingService interface {
-	Ping() string
-}
+import "go.uber.org/fx"
 
 type PingService struct {
-	httpClient IHTTPClient
-}
-
-func NewPingService(httpClient IHTTPClient) IPingService {
-	return &PingService{
-		httpClient: httpClient,
-	}
+	fx.In
+	HTTPClient HTTPClient
 }
 
 func (p PingService) Ping() string {
-	return p.httpClient.Get()
+	return p.HTTPClient.Get()
 }
