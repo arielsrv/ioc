@@ -5,6 +5,10 @@ import (
 	"go.uber.org/fx"
 )
 
+type IPingHandler interface {
+	Ping(ctx *fiber.Ctx) error
+}
+
 type PingHandler struct {
 	fx.In
 

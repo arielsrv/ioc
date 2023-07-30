@@ -2,6 +2,10 @@ package core
 
 import "go.uber.org/fx"
 
+type IPingService interface {
+	Ping() string
+}
+
 type PingService struct {
 	fx.In
 	HTTPClient HTTPClient
