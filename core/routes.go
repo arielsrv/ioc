@@ -1,8 +1,9 @@
 package core
 
 import (
-	"github.com/gofiber/swagger"
 	"net/http"
+
+	"github.com/gofiber/swagger"
 
 	"github.com/gofiber/fiber/v2"
 	"go.uber.org/fx"
