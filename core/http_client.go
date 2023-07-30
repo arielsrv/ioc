@@ -1,13 +1,14 @@
 package core
 
-import "go.uber.org/fx"
-
 type IHTTPClient interface {
 	Get() string
 }
 
 type HTTPClient struct {
-	fx.In
+}
+
+func NewHTTPClient() IHTTPClient {
+	return &HTTPClient{}
 }
 
 func (h HTTPClient) Get() string {

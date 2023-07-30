@@ -12,10 +12,10 @@ import (
 type Container struct {
 	fx.In
 
-	MessageHandler PingHandler
+	PingHandler IPingHandler
 }
 
 func Routes(app *fiber.App, c Container) {
 	app.Add(http.MethodGet, "/swagger/*", swagger.HandlerDefault)
-	app.Add(http.MethodGet, "/ping", c.MessageHandler.Ping)
+	app.Add(http.MethodGet, "/ping", c.PingHandler.Ping)
 }

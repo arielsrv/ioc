@@ -22,6 +22,9 @@ import (
 // @BasePath /.
 func main() {
 	app := fx.New(
+		fx.Provide(core.NewHTTPClient),
+		fx.Provide(core.NewPingService),
+		fx.Provide(core.NewPingHandler),
 		fx.Provide(core.NewApp),
 		fx.Invoke(func(app *core.App) {
 			err := app.Listen(":8080")

@@ -2,7 +2,6 @@ package core
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"go.uber.org/fx"
 )
 
 type IPingHandler interface {
@@ -10,9 +9,11 @@ type IPingHandler interface {
 }
 
 type PingHandler struct {
-	fx.In
+	PingService IPingService
+}
 
-	PingService PingService
+func NewPingHandler(pingService IPingService) IPingHandler {
+	return &PingHandler{PingService: pingService}
 }
 
 // Ping godoc
