@@ -6,11 +6,11 @@ toolchain go1.21.0
 
 require (
 	github.com/ansrivas/fiberprometheus/v2 v2.6.1
-	github.com/gofiber/fiber/v2 v2.48.0
+	github.com/gofiber/fiber/v2 v2.49.0
 	github.com/gofiber/swagger v0.1.12
 	github.com/sirupsen/logrus v1.9.3
 	github.com/stretchr/testify v1.8.4
-	github.com/swaggo/swag v1.16.1
+	github.com/swaggo/swag v1.16.2
 	go.uber.org/fx v1.20.0
 )
 
@@ -28,13 +28,13 @@ require (
 	github.com/go-openapi/swag v0.19.15 // indirect
 	github.com/gofiber/adaptor/v2 v2.2.1 // indirect
 	github.com/golang/protobuf v1.5.3 // indirect
-	github.com/google/uuid v1.3.0 // indirect
+	github.com/google/uuid v1.3.1 // indirect
 	github.com/josharian/intern v1.0.0 // indirect
-	github.com/klauspost/compress v1.16.6 // indirect
+	github.com/klauspost/compress v1.16.7 // indirect
 	github.com/mailru/easyjson v0.7.6 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.19 // indirect
-	github.com/mattn/go-runewidth v0.0.14 // indirect
+	github.com/mattn/go-runewidth v0.0.15 // indirect
 	github.com/matttproud/golang_protobuf_extensions v1.0.4 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/prometheus/client_golang v1.16.0 // indirect
@@ -52,7 +52,7 @@ require (
 	go.uber.org/multierr v1.6.0 // indirect
 	go.uber.org/zap v1.23.0 // indirect
 	golang.org/x/net v0.10.0 // indirect
-	golang.org/x/sys v0.10.0 // indirect
+	golang.org/x/sys v0.11.0 // indirect
 	golang.org/x/text v0.9.0 // indirect
 	golang.org/x/tools v0.7.0 // indirect
 	google.golang.org/protobuf v1.30.0 // indirect
