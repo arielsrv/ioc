@@ -7,7 +7,7 @@ toolchain go1.21.0
 require (
 	github.com/ansrivas/fiberprometheus/v2 v2.6.1
 	github.com/gofiber/fiber/v2 v2.49.1
-	github.com/gofiber/swagger v0.1.12
+	github.com/gofiber/swagger v0.1.13
 	github.com/sirupsen/logrus v1.9.3
 	github.com/stretchr/testify v1.8.4
 	github.com/swaggo/swag v1.16.2
