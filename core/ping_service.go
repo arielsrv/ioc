@@ -8,7 +8,7 @@ type PingService struct {
 	HTTPClient IHTTPClient
 }
 
-func NewPingService(httpClient IHTTPClient) IPingService {
+func NewPingService(httpClient IHTTPClient) *PingService {
 	return &PingService{
 		HTTPClient: httpClient,
 	}

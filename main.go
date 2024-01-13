@@ -23,12 +23,12 @@ import (
 // @BasePath /.
 func main() {
 	app := fx.New(
-		fx.Provide(core.NewHTTPClient),
-		fx.Provide(core.NewPingService),
-		fx.Provide(core.NewPingHandler),
+		fx.Provide(fx.Annotate(core.NewHTTPClient, fx.As(new(core.IHTTPClient)))),
+		fx.Provide(fx.Annotate(core.NewPingService, fx.As(new(core.IPingService)))),
+		fx.Provide(fx.Annotate(core.NewPingHandler, fx.As(new(core.IPingHandler)))),
 		fx.Provide(core.NewApp),
-		fx.Provide(logrus.New),
 		fx.Provide(core.NewConfig),
+		fx.Provide(logrus.New),
 		fx.WithLogger(func(log *logrus.Logger) fxevent.Logger {
 			return &fxevent.ConsoleLogger{
 				W: log.Writer(),
