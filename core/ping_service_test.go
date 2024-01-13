@@ -1,12 +1,11 @@
 package core_test
 
 import (
-	"ioc/core"
 	"testing"
 
-	"github.com/stretchr/testify/mock"
-
 	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/mock"
+	"ioc/core"
 )
 
 type HTTPClientMock struct {

@@ -3,11 +3,9 @@ package core
 import (
 	"net/http"
 
-	"github.com/sirupsen/logrus"
-
-	"github.com/gofiber/swagger"
-
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/swagger"
+	"github.com/sirupsen/logrus"
 	"go.uber.org/fx"
 )
 

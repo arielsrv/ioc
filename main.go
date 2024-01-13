@@ -2,13 +2,13 @@ package main
 
 import (
 	"context"
-	"ioc/core"
-	_ "ioc/docs"
 	"log"
 
 	"github.com/sirupsen/logrus"
 	"go.uber.org/fx"
 	"go.uber.org/fx/fxevent"
+	"ioc/core"
+	_ "ioc/docs"
 )
 
 // @title Fiber Example API
@@ -28,6 +28,7 @@ func main() {
 		fx.Provide(core.NewPingHandler),
 		fx.Provide(core.NewApp),
 		fx.Provide(logrus.New),
+		fx.Provide(core.NewConfig),
 		fx.WithLogger(func(log *logrus.Logger) fxevent.Logger {
 			return &fxevent.ConsoleLogger{
 				W: log.Writer(),
