@@ -4,7 +4,7 @@ go 1.24.5
 
 require (
 	github.com/ansrivas/fiberprometheus/v2 v2.7.0
-	github.com/gofiber/fiber/v2 v2.52.6
+	github.com/gofiber/fiber/v2 v2.52.8
 	github.com/gofiber/swagger v1.1.1
 	github.com/sirupsen/logrus v1.9.3
 	github.com/stretchr/testify v1.10.0
